@@ -45,7 +45,7 @@ def format_data_for_models(df_char,split_train=.7,split_val=.6):
 	X_trainval,Y_trainval,D_trainval = X[:n_d_train],Y[:n_d_train],D[:n_d_train]
 	#get random partitions of earlier data for train and validation sets
 	part = np.random.permutation(X_trainval.shape[0])
-	n_d_val = int(np.floor(split_val*len(X_train)))
+	n_d_val = int(np.floor(split_val*len(X_trainval)))
 	part_train = part[:n_d_val]
 	part_val = part[n_d_val:]
 	X_train,Y_train,D_train = X_trainval[part_train],Y_trainval[part_train],D_trainval[part_train]
